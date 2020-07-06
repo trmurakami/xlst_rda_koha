@@ -934,6 +934,19 @@
  </xsl:when>
  </xsl:choose>
 
+  <!-- Abstract -->
+ <xsl:if test="marc:datafield[@tag=520]">
+ <span class="results_summary diss_note">
+ <span class="label">Resumo: </span>
+ <xsl:for-each select="marc:datafield[@tag=520]">
+ <xsl:call-template name="subfieldSelect">
+ <xsl:with-param name="codes">abcdgo</xsl:with-param>
+ </xsl:call-template>
+ </xsl:for-each>
+ <xsl:choose><xsl:when test="position()=last()"><xsl:text></xsl:text></xsl:when><xsl:otherwise><xsl:text> </xsl:text></xsl:otherwise></xsl:choose>
+ </span>
+ </xsl:if>
+
  <!-- Dissertation note -->
  <xsl:if test="marc:datafield[@tag=502]">
  <span class="results_summary diss_note">
