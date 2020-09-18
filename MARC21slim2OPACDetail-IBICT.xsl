@@ -956,6 +956,22 @@
  </span>
  </xsl:if>
 
+ <!-- Fundo arquivistico -->
+ <xsl:if test="marc:datafield[@tag=852]">
+ <span class="results_summary edition"><span class="label">Fundo arquivístico: </span>
+ <xsl:for-each select="marc:datafield[@tag=852]">
+ <xsl:call-template name="chopPunctuation">
+ <xsl:with-param name="chopString">
+ <xsl:call-template name="subfieldSelect">
+ <xsl:with-param name="codes">bxz</xsl:with-param>
+ </xsl:call-template>
+ </xsl:with-param>
+ </xsl:call-template>
+ <xsl:choose><xsl:when test="position()=last()"><xsl:text></xsl:text></xsl:when><xsl:otherwise><xsl:text>; </xsl:text></xsl:otherwise></xsl:choose>
+ </xsl:for-each>
+ </span>
+ </xsl:if>
+
 <!-- DDC classification -->
  <xsl:if test="marc:datafield[@tag=082]">
  <span class="results_summary ddc">
