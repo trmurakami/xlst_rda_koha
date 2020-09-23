@@ -904,9 +904,9 @@
  </xsl:if>
 
  <!-- Fundo arquivistico -->
- <xsl:if test="marc:datafield[@tag=852]">
+ <xsl:if test="marc:datafield[@tag=592]">
  <span class="results_summary edition"><span class="label">Fundo arquivístico: </span>
- <xsl:for-each select="marc:datafield[@tag=852]">
+ <xsl:for-each select="marc:datafield[@tag=592]">
  <xsl:call-template name="chopPunctuation">
  <xsl:with-param name="chopString">
  <xsl:call-template name="subfieldSelect">
