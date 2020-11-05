@@ -599,6 +599,22 @@
  </span>
  </xsl:if>
 
+ <!-- 090 -->
+ <xsl:if test="marc:datafield[@tag=090]">
+ <span class="results_summary edition"><span class="label">Número de chamada: </span>
+ <xsl:for-each select="marc:datafield[@tag=090]">
+ <xsl:call-template name="chopPunctuation">
+ <xsl:with-param name="chopString">
+ <xsl:call-template name="subfieldSelect">
+ <xsl:with-param name="codes">a</xsl:with-param>
+ </xsl:call-template>
+ </xsl:with-param>
+ </xsl:call-template>
+ <xsl:choose><xsl:when test="position()=last()"><xsl:text></xsl:text></xsl:when><xsl:otherwise><xsl:text>; </xsl:text></xsl:otherwise></xsl:choose>
+ </xsl:for-each>
+ </span>
+ </xsl:if>
+
  <xsl:if test="marc:datafield[@tag=013]">
  <span class="results_summary patent_info">
  <span class="label">Informação de patente: </span>
