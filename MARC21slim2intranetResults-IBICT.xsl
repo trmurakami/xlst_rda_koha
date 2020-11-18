@@ -273,6 +273,7 @@
  </xsl:for-each>
  </xsl:for-each>
  </xsl:if>
+ <xsl:text>.</xsl:text>
  </a>
 
  <!-- Author Statement: Alternate Graphic Representation (MARC 880) -->

@@ -380,12 +380,13 @@
  <xsl:otherwise>
  <xsl:text>: </xsl:text>
  <xsl:apply-templates/>
- <xsl:text> </xsl:text>
+ <xsl:text></xsl:text>
  </xsl:otherwise>
  </xsl:choose>
  </xsl:for-each>
  </xsl:for-each>
  </xsl:if>
+ <xsl:text>.</xsl:text>
  </a>
 
  <!-- OpenURL -->

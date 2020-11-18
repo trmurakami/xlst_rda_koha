@@ -151,11 +151,12 @@
  <xsl:otherwise>
  <xsl:text>: </xsl:text>
  <xsl:apply-templates/>
- <xsl:text> </xsl:text>
+ <xsl:text></xsl:text>
  </xsl:otherwise>
  </xsl:choose>
  </xsl:for-each>
  </xsl:for-each>
+ <xsl:text>.</xsl:text>
  </h1>
  </xsl:if>
 
@@ -601,16 +602,17 @@
 
  <!-- 090 -->
  <xsl:if test="marc:datafield[@tag=090]">
- <span class="results_summary edition"><span class="label">Número de chamada: </span>
+ <span class="results_summary ddc">
+ <span class="label">Número de chamada: </span>
  <xsl:for-each select="marc:datafield[@tag=090]">
- <xsl:call-template name="chopPunctuation">
- <xsl:with-param name="chopString">
  <xsl:call-template name="subfieldSelect">
  <xsl:with-param name="codes">a</xsl:with-param>
+ <xsl:with-param name="delimeter"><xsl:text> | </xsl:text></xsl:with-param>
  </xsl:call-template>
- </xsl:with-param>
- </xsl:call-template>
- <xsl:choose><xsl:when test="position()=last()"><xsl:text></xsl:text></xsl:when><xsl:otherwise><xsl:text>; </xsl:text></xsl:otherwise></xsl:choose>
+ <xsl:choose>
+ <xsl:when test="position()=last()"><xsl:text> </xsl:text></xsl:when>
+ <xsl:otherwise> | </xsl:otherwise>
+ </xsl:choose>
  </xsl:for-each>
  </span>
  </xsl:if>
