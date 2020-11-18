@@ -500,26 +500,36 @@
  <xsl:call-template name="subfieldSelect">
  <xsl:with-param name="codes">a</xsl:with-param>
  </xsl:call-template>
+ <xsl:if test="marc:subfield[@code='b']">
  <xsl:text>: </xsl:text>
  <xsl:call-template name="subfieldSelect">
  <xsl:with-param name="codes">b</xsl:with-param>
  </xsl:call-template>
+ </xsl:if>
+ <xsl:if test="marc:subfield[@code='c']">
  <xsl:text>; </xsl:text>
  <xsl:call-template name="subfieldSelect">
  <xsl:with-param name="codes">c</xsl:with-param>
  </xsl:call-template>
+ </xsl:if>
+ <xsl:if test="marc:subfield[@code='e']">
  <xsl:text>; </xsl:text>
  <xsl:call-template name="subfieldSelect">
  <xsl:with-param name="codes">e</xsl:with-param>
  </xsl:call-template>
+ </xsl:if>
+ <xsl:if test="marc:subfield[@code='f']">
  <xsl:text>; </xsl:text>
  <xsl:call-template name="subfieldSelect">
  <xsl:with-param name="codes">f</xsl:with-param>
  </xsl:call-template>
+ </xsl:if>
+ <xsl:if test="marc:subfield[@code='g']">
  <xsl:text>; </xsl:text>
  <xsl:call-template name="subfieldSelect">
  <xsl:with-param name="codes">g</xsl:with-param>
  </xsl:call-template>
+ </xsl:if>
  </xsl:with-param>
  </xsl:call-template>
  </span>
